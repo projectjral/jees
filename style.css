@@ -32,7 +32,6 @@
 
 html {
   font-size: 62.5%;
-  
 }
 
 body {
@@ -58,7 +57,7 @@ button.white {
 
 /* GENERAL ELEMENTS */
 .section {
-  padding: 15rem 3rem;
+  padding: 3rem 3rem;
   border-top: 1px solid #ddd;
   transition: transform 1s, opacity 1s;
 }
@@ -171,13 +170,11 @@ img {
 
 /* HEADER */
 .header {
-  padding: 0 ;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  
 }
 
 /* NAVIGATION */
@@ -194,7 +191,7 @@ img {
   align-items: center;
   height: 9rem;
   width: 100%;
-  /* padding: 0 6rem; */
+  padding: 0 6rem;
   z-index: 100;
   
   /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06); */
@@ -248,21 +245,26 @@ img {
 }
 
 .header__title {
-  flex: 1;
-  /* max-width: 115rem; */
-  display: grid;
+  /* flex: 1;
+  max-width: 115rem; */
+  /* display: grid;
   grid-template-columns: 3fr 2fr;
   row-gap: 3rem;
   align-content: center;
   justify-content: center;
   align-items: start;
-  justify-items: start;
+  justify-items: start; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* height: 9rem; */
+  width: 100%;
+  
 }
 
 .header__img {
-  width: 100%;
-  grid-column: 2 / 3;
-  grid-row: 1 / span 4;
+  width: 50%;
+  
   transform: translateY(-6rem);
 }
 
@@ -430,7 +432,7 @@ img {
 /* EVENTS BANNER SECTION */
 #banner {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
@@ -477,9 +479,9 @@ img {
 
 #banner3 {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
-  padding: 0 80px;
+  padding: 0 30px;
 }
 
 #banner3 .banner-box {
@@ -836,45 +838,6 @@ img {
   padding: 2rem 5rem;
 }
 
-/* OLD FOOTER
-.footer {
-  padding: 10rem 3rem;
-  background-color: #37383d;
-}
-
-.footer__nav {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 5rem;
-}
-
-.footer__item {
-  margin-right: 4rem;
-}
-
-.footer__link {
-  font-size: 1.6rem;
-  color: #eee;
-  text-decoration: none;
-}
-
-.footer__logo {
-  height: 5rem;
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 5rem;
-}
-
-.footer__copyright {
-  font-size: 1.4rem;
-  color: #aaa;
-  text-align: center;
-}
-
-.footer__copyright .footer__link {
-  font-size: 1.4rem;
-} */
 
 /*     NEW FOOTER STYLE     */
 footer {
@@ -1034,9 +997,9 @@ footer .copyright {
 /*               MEDIA QUERIES              */
 
 @media (max-width: 799px) {
-  .section-p1 {
-    padding: 40px 40px;
-  }
+  /* .section-p1 {
+    padding: 40px 48px;
+  } */
 
   .nav__links {
     display: flex;
@@ -1073,7 +1036,6 @@ footer .copyright {
     position: absolute;
     font-family: inherit;
     color: inherit;
-    position: absolute;
     top: 0.5rem;
     right: 2rem;
     font-size: 4rem;
@@ -1112,7 +1074,7 @@ footer .copyright {
   }
 
   #banner3 {
-    padding: 0 40px;
+    padding: 0 20px;
   }
 
   #banner3 .banner-box {
@@ -1128,9 +1090,6 @@ footer .copyright {
     margin-right: 1rem;
   }
 
-  .features__feature {
-    overflow: hidden;
-  }
   .features__header {
     margin-top: 0;
   }
@@ -1138,15 +1097,79 @@ footer .copyright {
   .features__feature p {
     margin-top: 0; 
   }
-};
+}
 
 
 @media (max-width: 477px) {
-  .header {
-    height: 100vh;
-  }
-
-  .header__title img{
+  .section--hidden {
+    opacity: 1;
+    transform: none;
+}
+  
+  .section-p1 {
+    padding: 40px 40px;
+}
+  .header__img {
     display: none;
   }
+
+  .nav {
+    padding: 10px 30px;
+    /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06); */
+  }
+
+  h1 {
+    font-size: 3.125em;
+  }
+
+  h4 {
+    font-size: 2rem;
+  }
+
+  .operations__tab-container {
+  display: block;
+  justify-content: center;
+  }
+  .section {
+    padding: 1.25rem;
+    border-top: 1px solid #ddd;
+  }
+
+  #feature {
+    justify-content: space-between;
+  }
+
+  #feature .fe-box {
+    width: 155px;
+    margin: 0 0 15px 0;
+  }
+
+  #product1 .pro {
+    width: 100%;
+  }
+
+  #banner .banner-box {
+    height: 40vh;
+  }
+
+  #banner .banner-box2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  #banner3 {
+    padding: 0 10px;
+  }
+
+  #banner3 .banner-box {
+    width: 100%;
+  }
+
+
+
+
+
+  footer .copyright {
+    text-align: start;
+}
 }
