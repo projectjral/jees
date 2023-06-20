@@ -1179,10 +1179,7 @@ footer .copyright {
 /******************************************/
 
 @media (max-width: 799px) {
-  /* .section-p1 {
-    padding: 40px 48px;
-  } */
-
+  
   /* ------- index page ------- */
   .nav__links {
     display: flex;
@@ -1210,8 +1207,14 @@ footer .copyright {
   }
   #mobile i{
     color: #1a1a1a;
-    /* padding: 24px; */
     padding-left: 25px;
+  }
+
+
+  #bar {
+    font-size: 3rem;
+    border-left: 1px solid #ddd;
+    margin-left: 25px;
   }
 
   .nav--close {
@@ -1456,6 +1459,13 @@ footer .copyright {
   
   .section--sign-up .section__title {
     margin-bottom: 0;
+  }
+
+  #search-container {
+    display: block;
+  }
+  h4 {
+    padding-left: 18px;
   }
 
   
