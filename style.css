@@ -55,6 +55,17 @@ button.white {
   transition: 0.2s;
 }
 
+button.normal {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 11px 18px;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.2s;
+  color: #0d004d;
+}
 /* GENERAL ELEMENTS */
 .section {
   padding: 3rem 3rem;
@@ -242,6 +253,10 @@ img {
   color: inherit;
   background-color: var(--color-primary-darker);
   color: #333;
+}
+
+.nav__link.active {
+  color: var(--color-primary);
 }
 
 .header__title {
@@ -839,6 +854,169 @@ img {
 }
 
 
+/************************* Products Page **************************/
+/*****************************************************************/
+/****************************************************************/
+
+#search-container {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.browse-container {
+  /* padding: 1rem; */
+}
+
+#search-input {
+  padding: 10px 10px 10px 20px;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  background-color: transparent;
+  outline: none;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#search-input,
+.filter-container:current {
+  outline: none;
+}
+
+.filter-option select{
+  padding: 4px 8px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  background-color: transparent;
+  outline: none;
+}
+
+.pagi-arrow {
+  border: none;
+}
+
+#pagination {
+  text-align: center;
+}
+
+#pagination a {
+  text-decoration: none;
+  background-color: #088178;
+  padding: 15px 20px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.section-col {
+  display: flex;
+}
+
+.aside {
+    min-width: 250px;
+    padding: 10px 20px;
+    border: 1px solid #cce7d0;
+    border-radius: 0px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(31, 12, 12, 0.02);
+    margin: 15px 0;
+    text-align: start;
+    height: 850px;
+}
+
+#product1 .prod__col {
+  justify-content: space-around;
+}
+
+.catg-box {
+  border-bottom: 1px solid #cce7d0;
+  padding: 12px 0;
+}
+.catg__list {
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+.catg__list span {
+  float: right;
+  font-size: 2rem;
+}
+
+
+/************************* Single Product Page **************************/
+/*****************************************************************/
+/****************************************************************/
+#prodetails {
+  display: flex;
+  margin-top: 20px;
+}
+
+#prodetails .singlePro-image{
+  width: 40%;
+  margin-right: 50px;
+}
+
+.small__img--group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.small__img--col {
+  flex-basis: 24%;
+  cursor: pointer;
+}
+
+#prodetails .single__pro--details{
+  width: 50%;
+  padding-top: 30px;
+}
+
+#prodetails .single__pro--details h4 {
+  padding: 40px 0 20px 0;
+}
+
+#prodetails .single__pro--details h2 {
+  font-size: 26px;
+}
+
+#prodetails .single__pro--details select {
+  display: block;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+#prodetails .single__pro--details input {
+  width: 50px;
+  height:  47px;
+  padding-left: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+#prodetails .single__pro--details input:focus {
+  outline: none;
+}
+
+#prodetails .single__pro--details button {
+  background-color: #088178;
+  color: #fff
+}
+
+#prodetails .single__pro--details span {
+  font-size: 1.4rem;
+}
+
+
+
 /*     NEW FOOTER STYLE     */
 footer {
   display: flex;
@@ -994,13 +1172,18 @@ footer .copyright {
   font-weight: 400;
 }
 
+/**********************************************/
+/*********************************************/
 /*               MEDIA QUERIES              */
+/*******************************************/
+/******************************************/
 
 @media (max-width: 799px) {
   /* .section-p1 {
     padding: 40px 48px;
   } */
 
+  /* ------- index page ------- */
   .nav__links {
     display: flex;
     flex-direction: column;
@@ -1015,7 +1198,6 @@ footer .copyright {
     box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
     padding: 80px 0 0 10px;
     transition: 0.5s;
-    
   }
 
   .nav__links li {
@@ -1097,8 +1279,34 @@ footer .copyright {
   .features__feature p {
     margin-top: 0; 
   }
+
+  /*------------------------------ */
+  /* ------- products page ------- */
+  /*------------------------------ */
+
+  .aside {
+    padding: 0.25rem 1.3rem;
+    min-width: 180px;
+    height: 940px;
+  }
+  
+  #product1 {
+    padding: 1.3rem 1.3rem;
+  }
+
+
+  /*------------------------------ */
+  /* ------- Single product page ------- */
+  /*------------------------------ */
+  #prodetails .single__pro--details select {
+    margin-bottom: 20px;
+  }
 }
 
+ 
+/*********************************************/
+/*********************SMALL VIEWPORT************************/
+/*********************************************/
 
 @media (max-width: 477px) {
   .section--hidden {
@@ -1229,5 +1437,49 @@ footer .copyright {
 /*                             FOOTER SECTION                         */
   footer .copyright {
     text-align: start;
+  }
+
+
+
+  /*------------------------------ */
+  /* ------- products page ------- */
+  /*------------------------------ */
+
+  
+  .aside {
+    display: none;
+  }
+
+  .aside h4, h3 {
+    display: none;
+  }
+  
+  .section--sign-up .section__title {
+    margin-bottom: 0;
+  }
+
+  
+
+  /*------------------------------ */
+  /* ------- single product page ------- */
+  /*------------------------------ */
+  #prodetails {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #prodetails .singlePro-image {
+    width: 100%;
+    margin-right: 0px;
+  }
+
+  #prodetails .single__pro--details {
+    width: 100%;
+    padding-top: 30px;
+  }
+
+  #prodetails .single__pro--details h4 {
+    padding: 20px 0;
 }
+
 }

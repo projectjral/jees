@@ -17,6 +17,8 @@ const navLinks = document.querySelector('.nav__links');
 const navClose = document.querySelector('.nav--close');
 
 ///////////////////////////////////////
+
+
 // Burger Menu
 
 const toggleBar = function(e) {
@@ -99,16 +101,44 @@ btnScrollTo.addEventListener('click', function (e) {
 // -- 1. Add event listener to common parent element
 // -- 2. Determine what element originated the event
 
-navLinks.addEventListener('click', function(e) {
-  e.preventDefault();
+// --------- this is the navigation link smooth scroll disabled since nothing is being scrolled to
 
-  // Matching strategy
-   if(e.target.classList.contains('nav__link')) {
-    const id = e.target.getAttribute('href');
-    document.querySelector(id).scrollIntoView({behavior: 'smooth'});
-   }
+// navLinks.addEventListener('click', function(e) {
+//   e.preventDefault();
 
-});
+//   // Matching strategy
+//    if(e.target.classList.contains('nav__link')) {
+//     const id = e.target.getAttribute('href');
+//     document.querySelector(id).scrollIntoView({behavior: 'smooth'});
+//    } else {
+//     return
+//    }
+
+// });
+
+
+// Menu fade animation
+
+const handleHover = function(e) {
+  if(e.target.classList.contains('nav__link')){
+    const link = e.target;
+    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+    const logo = link.closest('.nav').querySelector('img');
+    
+    siblings.forEach(el => {
+      if(el !== link) el.style.opacity = this;
+    });
+    
+    logo.style.opacity = this;
+  }
+};
+
+// Passing "argument" into handler
+nav.addEventListener('mouseover', handleHover.bind(0.5)); 
+
+nav.addEventListener('mouseout', handleHover.bind(1));
+
+
 
 // Tabbed component
   tabsContainer.addEventListener('click', function(e) {
@@ -132,27 +162,8 @@ navLinks.addEventListener('click', function(e) {
 
 });
 
-// Menu fade animation
-
-const handleHover = function(e) {
-  if(e.target.classList.contains('nav__link')){
-    const link = e.target;
-    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
-    const logo = link.closest('.nav').querySelector('img');
-    
-    siblings.forEach(el => {
-      if(el !== link) el.style.opacity = this;
-    });
-    
-    logo.style.opacity = this;
-  }
-};
 
 
-// Passing "argument" into handler
-nav.addEventListener('mouseover', handleHover.bind(0.5)); 
-
-nav.addEventListener('mouseout', handleHover.bind(1));
 
 // // Sticky navigation
 // const initialCoords = section1.getBoundingClientRect();
