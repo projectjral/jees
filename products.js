@@ -129,88 +129,87 @@ products.forEach(product => {
 
 
 
-// // Aside toggle menu
-// function toggleMenu() {
-//   const buttons = document.querySelectorAll('.toggleButton');
+/////////
+/////////-- SEARCH BUTTON
 
-//   buttons.forEach((button) => {
-//     button.addEventListener('click', () => {
-//       const targetId = button.dataset.target;
-//       const targetMenu = document.getElementById(targetId);
+const searchInput = document.getElementById('search-input');
+const searchButton = document.getElementById('search-button');
 
-//       // Toggle the 'collapsed' class on the target menu
-//       targetMenu.classList.toggle('collapsed');
-//       const isCollapsed = targetMenu.classList.contains('collapsed');
+// Add event listener to the search button
+searchButton.addEventListener('click', searchProducts);
 
-//       // Update the plus/minus sign
-//       const spanElement = button.querySelector('span');
-//       if (isCollapsed) {
-//         spanElement.textContent = '+';
-//       } else {
-//         spanElement.textContent = '-';
-//       }
-//     });
-//   });
-// }
+// Function to search products based on the input value
+function searchProducts() {
+  const searchTerm = searchInput.value.trim().toLowerCase();
 
-// toggleMenu();
+  // Get all the product elements
+  const products = document.querySelectorAll('.pro');
 
-// //// dynamic product side show
-// /////////////////////////////////////////////
+  // Iterate over each product and check if it matches the search term
+  products.forEach(product => {
+    const productName = product.querySelector('.desc span').textContent.toLowerCase();
 
-// // Get references to the sidebar menus and product container
-// const menus = document.querySelectorAll('#sidebar ul');
-// const productContainer = document.getElementById('productContainer');
+    // Show/hide the product based on the search term match
+    if (productName.includes(searchTerm)) {
+      product.style.display = 'block';
+    } else {
+      product.style.display = 'none';
+    }
+  });
+}
 
-// // Add click event listeners to each sidebar menu
-// menus.forEach(menu => {
-//   const button = menu.previousElementSibling;
-//   button.addEventListener('click', () => {
-//     // Hide all menus
-//     menus.forEach(menu => menu.classList.add('collapsed'));
-
-//     // Show the selected menu
-//     menu.classList.remove('collapsed');
-
-//     // Filter and display the corresponding products
-//     const selectedMenu = button.getAttribute('data-target');
-//     const products = document.querySelectorAll('.pro');
-//     products.forEach(product => {
-//       if (product.classList.contains(selectedMenu)) {
-//         product.style.display = 'block';
-//       } else {
-//         product.style.display = 'none';
-//       }
-//     });
-//   });
-// });
+// Add event listener to reset the search
+searchInput.addEventListener('input', searchProducts);
 
 
 
-////////////////////////
+///////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+
+
+// Get references to the filter options
+const categoryFilter = document.getElementById('category');
+const priceFilter = document.getElementById('price');
+
+// Add event listeners to the filter options
+categoryFilter.addEventListener('change', filterProducts);
+priceFilter.addEventListener('change', filterProducts);
+
+// Function to filter the products based on the selected options
+function filterProducts() {
+  const selectedCategory = categoryFilter.value;
+  const selectedPrice = priceFilter.value;
+
+  // Get all the product elements
+  const products = document.querySelectorAll('.pro');
+
+  // Iterate over each product and apply the filter
+  products.forEach(product => {
+    const productCategory = product.getAttribute('data-category');
+    const productPrice = parseInt(product.getAttribute('data-price'));
+
+    // Check if the product matches the selected category and price range
+    const categoryMatch = selectedCategory === '' || selectedCategory === productCategory;
+    const priceMatch = selectedPrice === '' || isPriceInRange(productPrice, selectedPrice);
+
+    // Show/hide the product based on the filter
+    product.style.display = categoryMatch && priceMatch ? 'block' : 'none';
+  });
+}
+
+// Function to check if a price falls within a given range
+function isPriceInRange(price, range) {
+  const [min, max] = range.split('-').map(parseFloat);
+  return price >= min && price <= max;
+}
 
 
 
 
-// // Aside toggle menu 
-
-// function toggleMenu() {
-//   const buttons = document.querySelectorAll('.toggleButton');
+//////////////////////////////////////////////////////
+/////////////////////////////////////////////////////
 
 
-// buttons.forEach((button) => {
-//   button.addEventListener('click', () => {
-//     const targetId = button.dataset.target;
-//     const targetMenu = document.getElementById(targetId);
-
-
-//     // Toggle the 'collapsed' class on the target menu
-//     targetMenu.classList.toggle('collapsed');
-//   });
-// });
-// };
-
-// toggleMenu();
 
 // Modal window
 
