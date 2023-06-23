@@ -939,6 +939,7 @@ img {
 .collapsed {
   display: none;
 }
+
 #sidebar li {
   list-style-type: none;
   margin: 0;
@@ -962,7 +963,13 @@ img {
 }
 .toggleButton span {
   font-size: 2rem;
+  tranform: rotate(0deg);
+  transition: transform 0.3 ease-in-out;
 }
+.toggleButton.collapsed span {
+  transform: rotate(-45deg);
+}
+
 
 /****************************/
 

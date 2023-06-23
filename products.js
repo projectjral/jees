@@ -34,24 +34,183 @@ const toggleBar = function(e) {
 barToggle.addEventListener('click', toggleBar);
 navClose.addEventListener('click', toggleBar)
 
+////// TEST
 
-// Aside toggle menu 
-
+// Aside toggle menu
 function toggleMenu() {
   const buttons = document.querySelectorAll('.toggleButton');
 
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const targetId = button.dataset.target;
+      const targetMenu = document.getElementById(targetId);
 
-buttons.forEach((button) => {
-  button.addEventListener('click', () => {
-    const targetId = button.dataset.target;
-    const targetMenu = document.getElementById(targetId);
+      // Check if the target menu is already collapsed
+      const isCollapsed = targetMenu.classList.contains('collapsed');
 
-    targetMenu.classList.toggle('collapsed');
+      // Hide all menus
+      menus.forEach(menu => menu.classList.add('collapsed'));
+
+      // Check if the target menu was already collapsed
+      if (!isCollapsed) {
+        // Toggle the 'collapsed' class on the target menu
+        targetMenu.classList.toggle('collapsed');
+      }
+
+      // Update the plus/minus sign
+      const spanElement = button.querySelector('span');
+      if (targetMenu.classList.contains('collapsed')) {
+        spanElement.textContent = '+';
+      } else {
+        spanElement.textContent = '-';
+      }
+    });
   });
-});
-};
+}
 
 toggleMenu();
+
+// Get references to the sidebar menus and product container
+const menuButtons = document.querySelectorAll('#sidebar .toggleButton');
+const menus = document.querySelectorAll('#sidebar ul');
+const productContainer = document.getElementById('productContainer');
+
+// Add click event listeners to each sidebar menu button
+menuButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const selectedMenuId = button.dataset.target;
+    const selectedMenu = document.getElementById(selectedMenuId);
+
+    // Hide all menus except the selected one
+    menus.forEach(menu => {
+      if (menu !== selectedMenu) {
+        menu.classList.add('collapsed');
+      }
+    });
+
+    // Toggle the 'collapsed' class on the selected menu
+    selectedMenu.classList.toggle('collapsed');
+
+    // Update the plus/minus sign for all buttons
+    menuButtons.forEach(btn => {
+      const spanElement = btn.querySelector('span');
+      if (btn === button) {
+        if (selectedMenu.classList.contains('collapsed')) {
+          spanElement.textContent = '+';
+        } else {
+          spanElement.textContent = '-';
+        }
+      } else {
+        spanElement.textContent = '+';
+      }
+    });
+
+    // Filter and display the corresponding products
+    const products = document.querySelectorAll('.pro');
+    products.forEach(product => {
+      const productMenu = product.classList[1];
+      if (productMenu === selectedMenuId) {
+        product.style.display = 'block';
+      } else {
+        product.style.display = 'none';
+      }
+    });
+  });
+});
+
+// Add click event listeners to each product
+const products = document.querySelectorAll('.pro');
+products.forEach(product => {
+  product.addEventListener('click', () => {
+    window.location.href = 'product.html';
+  });
+});
+
+
+
+
+// // Aside toggle menu
+// function toggleMenu() {
+//   const buttons = document.querySelectorAll('.toggleButton');
+
+//   buttons.forEach((button) => {
+//     button.addEventListener('click', () => {
+//       const targetId = button.dataset.target;
+//       const targetMenu = document.getElementById(targetId);
+
+//       // Toggle the 'collapsed' class on the target menu
+//       targetMenu.classList.toggle('collapsed');
+//       const isCollapsed = targetMenu.classList.contains('collapsed');
+
+//       // Update the plus/minus sign
+//       const spanElement = button.querySelector('span');
+//       if (isCollapsed) {
+//         spanElement.textContent = '+';
+//       } else {
+//         spanElement.textContent = '-';
+//       }
+//     });
+//   });
+// }
+
+// toggleMenu();
+
+// //// dynamic product side show
+// /////////////////////////////////////////////
+
+// // Get references to the sidebar menus and product container
+// const menus = document.querySelectorAll('#sidebar ul');
+// const productContainer = document.getElementById('productContainer');
+
+// // Add click event listeners to each sidebar menu
+// menus.forEach(menu => {
+//   const button = menu.previousElementSibling;
+//   button.addEventListener('click', () => {
+//     // Hide all menus
+//     menus.forEach(menu => menu.classList.add('collapsed'));
+
+//     // Show the selected menu
+//     menu.classList.remove('collapsed');
+
+//     // Filter and display the corresponding products
+//     const selectedMenu = button.getAttribute('data-target');
+//     const products = document.querySelectorAll('.pro');
+//     products.forEach(product => {
+//       if (product.classList.contains(selectedMenu)) {
+//         product.style.display = 'block';
+//       } else {
+//         product.style.display = 'none';
+//       }
+//     });
+//   });
+// });
+
+
+
+////////////////////////
+
+
+
+
+// // Aside toggle menu 
+
+// function toggleMenu() {
+//   const buttons = document.querySelectorAll('.toggleButton');
+
+
+// buttons.forEach((button) => {
+//   button.addEventListener('click', () => {
+//     const targetId = button.dataset.target;
+//     const targetMenu = document.getElementById(targetId);
+
+
+//     // Toggle the 'collapsed' class on the target menu
+//     targetMenu.classList.toggle('collapsed');
+//   });
+// });
+// };
+
+// toggleMenu();
 
 // Modal window
 

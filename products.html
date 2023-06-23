@@ -37,9 +37,7 @@
             <a class="nav__link active" href="products.html">Products</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link catg__link" href="event.html"
-              >Event Categories</a
-            >
+            <a class="nav__link catg__link" href="#">Event Categories</a>
           </li>
           <li class="nav__item">
             <a class="nav__link" href="contact.html">Contact</a>
@@ -242,7 +240,7 @@
       <div id="productContainer"></div>
 
       <div class="pro__container prod__col prod__col2">
-        <div class="pro menu1" onclick="window.location.href='product.html'">
+        <div class="pro pro__menu1">
           <img src="img/shirtspic/fe-coupshirt1.jpg" alt="" />
           <div class="desc">
             <span>Couple Shirt</span>
@@ -654,33 +652,5 @@
     <div class="overlay hidden"></div>
 
     <script src="products.js"></script>
-    <script>
-      // Get references to the sidebar menus and product container
-      const menus = document.querySelectorAll('#sidebar ul');
-      const productContainer = document.getElementById('productContainer');
-
-      // Add click event listeners to each sidebar menu
-      menus.forEach(menu => {
-        const button = menu.previousElementSibling;
-        button.addEventListener('click', () => {
-          // Hide all menus
-          menus.forEach(menu => menu.classList.add('collapsed'));
-
-          // Show the selected menu
-          menu.classList.remove('collapsed');
-
-          // Filter and display the corresponding products
-          const selectedMenu = button.getAttribute('data-target');
-          const products = document.querySelectorAll('.pro');
-          products.forEach(product => {
-            if (product.classList.contains(selectedMenu)) {
-              product.style.display = 'block';
-            } else {
-              product.style.display = 'none';
-            }
-          });
-        });
-      });
-    </script>
   </body>
 </html>
