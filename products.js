@@ -1,12 +1,14 @@
 'use strict';
 
 const modal = document.querySelector('.modal');
+const catg = document.querySelector('.event__catg');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 const btnScrollTo = document.querySelector('.btn--scroll-to');
 const section1 =  document.getElementById('section--1');
 const nav = document.querySelector('.nav');
+const catgLink = document.querySelector('.catg__link');
 const tabs = document.querySelectorAll('.operations__tab');
 const tabsContainer = document.querySelector('.operations__tab-container');
 const tabsContent = document.querySelectorAll('.operations__content');
@@ -15,7 +17,6 @@ const allSections = document.querySelectorAll('.section');
 const barToggle = document.getElementById('bar');
 const navLinks = document.querySelector('.nav__links');
 const navClose = document.querySelector('.nav--close');
-
 ///////////////////////////////////////
 
 
@@ -32,6 +33,25 @@ const toggleBar = function(e) {
 };
 barToggle.addEventListener('click', toggleBar);
 navClose.addEventListener('click', toggleBar)
+
+
+// Aside toggle menu 
+
+function toggleMenu() {
+  const buttons = document.querySelectorAll('.toggleButton');
+
+
+buttons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const targetId = button.dataset.target;
+    const targetMenu = document.getElementById(targetId);
+
+    targetMenu.classList.toggle('collapsed');
+  });
+});
+};
+
+toggleMenu();
 
 // Modal window
 
@@ -57,6 +77,23 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
+// Event category window
+//
+const openCatg = function(e) {
+  e.preventDefault();
+  catg.classList.remove('hidden');
+  
+}
+const closeCatg = function() {
+  catg.classList.add('hidden');
+};
+
+catgLink.addEventListener('mouseover', openCatg);
+catgLink.addEventListener('mouseout', closeCatg);
+catg.addEventListener('mouseover', openCatg);
+catg.addEventListener('mouseout', closeCatg);
+/////////////////////////////////////////////
+
 
 // Menu fade animation
 
@@ -79,6 +116,12 @@ nav.addEventListener('mouseover', handleHover.bind(0.5));
 
 nav.addEventListener('mouseout', handleHover.bind(1));
 
+
+
+
+
+
+///////////////////////////////////////////////////////////////////
 // Tabbed component
   tabsContainer.addEventListener('click', function(e) {
     const clicked = e.target.closest('.operations__tab');

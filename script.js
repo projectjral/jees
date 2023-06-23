@@ -1,12 +1,14 @@
 'use strict';
 
 const modal = document.querySelector('.modal');
+const catg = document.querySelector('.event__catg');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 const btnScrollTo = document.querySelector('.btn--scroll-to');
 const section1 =  document.getElementById('section--1');
 const nav = document.querySelector('.nav');
+const catgLink = document.querySelector('.catg__link');
 const tabs = document.querySelectorAll('.operations__tab');
 const tabsContainer = document.querySelector('.operations__tab-container');
 const tabsContent = document.querySelectorAll('.operations__content');
@@ -31,9 +33,13 @@ const toggleBar = function(e) {
   }
 };
 barToggle.addEventListener('click', toggleBar);
-navClose.addEventListener('click', toggleBar)
+navClose.addEventListener('click', toggleBar);
+
+
+
 
 // Modal window
+
 
 const openModal = function(e) {
   e.preventDefault();
@@ -46,9 +52,12 @@ const closeModal = function() {
   overlay.classList.add('hidden');
 };
 
+
+
 btnsOpenModal.forEach(btn => btn.addEventListener('click', openModal));
 
 btnCloseModal.addEventListener('click', closeModal);
+
 overlay.addEventListener('click', closeModal);
 
 document.addEventListener('keydown', function (e) {
@@ -57,6 +66,22 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
+// Event category window
+//
+const openCatg = function(e) {
+  e.preventDefault();
+  catg.classList.remove('hidden');
+  
+}
+const closeCatg = function() {
+  catg.classList.add('hidden');
+};
+
+catgLink.addEventListener('mouseover', openCatg);
+catgLink.addEventListener('mouseout', closeCatg);
+catg.addEventListener('mouseover', openCatg);
+catg.addEventListener('mouseout', closeCatg);
+/////////////////////////////////////////////
 
 // Button scrolling
 btnScrollTo.addEventListener('click', function (e) {

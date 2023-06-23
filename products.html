@@ -24,7 +24,7 @@
   </head>
   <body>
     <header class="header">
-      <nav class="nav">
+      <nav id="nav" class="nav">
         <a href="index.html"
           ><img
             src="img/jeeslogo.png"
@@ -37,7 +37,9 @@
             <a class="nav__link active" href="products.html">Products</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="event.html">Event Categories</a>
+            <a class="nav__link catg__link" href="event.html"
+              >Event Categories</a
+            >
           </li>
           <li class="nav__item">
             <a class="nav__link" href="contact.html">Contact</a>
@@ -105,57 +107,142 @@
 
     <section class="section section-col" id="product1">
       <div class="pro__container">
-        <div class="aside">
-          <div class="catg-box">
-            <a href="" class="catg__list">Accessories<span>+</span></a>
-          </div>
-          <div class="catg-box">
-            <a href="" class="catg__list">Bags<span>+</span></a>
-          </div>
-          <div class="catg-box">
-            <a href="" class="catg__list">Crafts<span>+</span></a>
-          </div>
-          <div class="catg-box">
-            <a href="" class="catg__list">Drinkware<span>+</span></a>
-          </div>
-          <div class="catg-box">
-            <a href="" class="catg__list">Footware<span>+</span></a>
-          </div>
-          <div class="catg-box">
-            <a href="" class="catg__list">Gifts<span>+</span></a>
-          </div>
-          <div class="catg-box">
-            <a href="" class="catg__list">Hats<span>+</span></a>
-          </div>
-          <div class="catg-box">
-            <a href="" class="catg__list">Jackets<span>+</span></a>
-          </div>
-          <div class="catg-box">
-            <a href="" class="catg__list">Kids<span>+</span></a>
-          </div>
-          <div class="catg-box">
-            <a href="" class="catg__list">Office Supplies<span>+</span></a>
-          </div>
-          <div class="catg-box">
-            <a href="" class="catg__list">Outdoor<span>+</span></a>
-          </div>
-          <div class="catg-box">
-            <a href="" class="catg__list">Promotional Products<span>+</span></a>
-          </div>
-          <div class="catg-box">
-            <a href="" class="catg__list">Signs & Banners<span>+</span></a>
-          </div>
-          <div class="catg-box">
-            <a href="" class="catg__list">Stickers & Magnets<span>+</span></a>
-          </div>
-          <div class="catg-box">
-            <a href="" class="catg__list">Uniforms & Workwear<span>+</span></a>
-          </div>
+        <div class="aside" id="sidebar">
+          <button class="toggleButton" data-target="menu1">
+            T-shirts <span>+</span>
+          </button>
+          <ul id="menu1" class="collapsed">
+            <li>Menu item 1</li>
+            <li>Menu item 2</li>
+            <li>Menu item 3</li>
+          </ul>
+          <button class="toggleButton" data-target="menu2">
+            Accessories <span>+</span>
+          </button>
+          <ul id="menu2" class="collapsed">
+            <li>Menu item 1</li>
+            <li>Menu item 2</li>
+            <li>Menu item 3</li>
+          </ul>
+          <button class="toggleButton" data-target="menu3">
+            Bags <span>+</span>
+          </button>
+          <ul id="menu3" class="collapsed">
+            <li>Menu item 1</li>
+            <li>Menu item 2</li>
+            <li>Menu item 3</li>
+          </ul>
+          <button class="toggleButton" data-target="menu4">
+            Arts & Crafts <span>+</span>
+          </button>
+          <ul id="menu4" class="collapsed">
+            <li>Menu item 1</li>
+            <li>Menu item 2</li>
+            <li>Menu item 3</li>
+          </ul>
+          <button class="toggleButton" data-target="menu5">
+            Drinkware <span>+</span>
+          </button>
+          <ul id="menu5" class="collapsed">
+            <li>Menu item 1</li>
+            <li>Menu item 2</li>
+            <li>Menu item 3</li>
+          </ul>
+          <button class="toggleButton" data-target="menu6">
+            Footware <span>+</span>
+          </button>
+          <ul id="menu6" class="collapsed">
+            <li>Menu item 1</li>
+            <li>Menu item 2</li>
+            <li>Menu item 3</li>
+          </ul>
+          <button class="toggleButton" data-target="menu7">
+            Gifts <span>+</span>
+          </button>
+          <ul id="menu7" class="collapsed">
+            <li>Menu item 1</li>
+            <li>Menu item 2</li>
+            <li>Menu item 3</li>
+          </ul>
+          <button class="toggleButton" data-target="menu8">
+            Hats <span>+</span>
+          </button>
+          <ul id="menu8" class="collapsed">
+            <li>Menu item 1</li>
+            <li>Menu item 2</li>
+            <li>Menu item 3</li>
+          </ul>
+          <button class="toggleButton" data-target="menu9">
+            Jackets <span>+</span>
+          </button>
+          <ul id="menu9" class="collapsed">
+            <li>Menu item 1</li>
+            <li>Menu item 2</li>
+            <li>Menu item 3</li>
+          </ul>
+          <button class="toggleButton" data-target="menu10">
+            Kids <span>+</span>
+          </button>
+          <ul id="menu10" class="collapsed">
+            <li>Menu item 1</li>
+            <li>Menu item 2</li>
+            <li>Menu item 3</li>
+          </ul>
+          <button class="toggleButton" data-target="menu11">
+            Office Supplies <span>+</span>
+          </button>
+          <ul id="menu11" class="collapsed">
+            <li>Menu item 1</li>
+            <li>Menu item 2</li>
+            <li>Menu item 3</li>
+          </ul>
+          <button class="toggleButton" data-target="menu12">
+            Outdoor <span>+</span>
+          </button>
+          <ul id="menu12" class="collapsed">
+            <li>Menu item 1</li>
+            <li>Menu item 2</li>
+            <li>Menu item 3</li>
+          </ul>
+          <button class="toggleButton" data-target="menu13">
+            Promotional Products <span>+</span>
+          </button>
+          <ul id="menu13" class="collapsed">
+            <li>Menu item 1</li>
+            <li>Menu item 2</li>
+            <li>Menu item 3</li>
+          </ul>
+          <button class="toggleButton" data-target="menu14">
+            Signs & Banners <span>+</span>
+          </button>
+          <ul id="menu14" class="collapsed">
+            <li>Menu item 1</li>
+            <li>Menu item 2</li>
+            <li>Menu item 3</li>
+          </ul>
+          <button class="toggleButton" data-target="menu15">
+            Stickers & Banners <span>+</span>
+          </button>
+          <ul id="menu15" class="collapsed">
+            <li>Menu item 1</li>
+            <li>Menu item 2</li>
+            <li>Menu item 3</li>
+          </ul>
+          <button class="toggleButton" data-target="menu16">
+            Uniforms & Workwear <span>+</span>
+          </button>
+          <ul id="menu16" class="collapsed">
+            <li>Menu item 1</li>
+            <li>Menu item 2</li>
+            <li>Menu item 3</li>
+          </ul>
         </div>
       </div>
 
+      <div id="productContainer"></div>
+
       <div class="pro__container prod__col prod__col2">
-        <div class="pro" onclick="window.location.href='product.html'">
+        <div class="pro menu1" onclick="window.location.href='product.html'">
           <img src="img/shirtspic/fe-coupshirt1.jpg" alt="" />
           <div class="desc">
             <span>Couple Shirt</span>
@@ -171,7 +258,7 @@
           </div>
           <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
         </div>
-        <div class="pro">
+        <div class="pro menu1">
           <img src="img/shirtspic/fe-famShirt1.jpg" alt="" />
           <div class="desc">
             <span>Family Shirt</span>
@@ -187,7 +274,7 @@
           </div>
           <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
         </div>
-        <div class="pro">
+        <div class="pro menu1">
           <img src="img/shirtspic/fe-zorroShirt.jpg" alt="" />
           <div class="desc">
             <span>One Piece Shirt</span>
@@ -203,7 +290,7 @@
           </div>
           <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
         </div>
-        <div class="pro">
+        <div class="pro menu1">
           <img src="img/shirtspic/fe-chopperShirt.jpg" alt="" />
           <div class="desc">
             <span>One Piece Shirt</span>
@@ -219,7 +306,7 @@
           </div>
           <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
         </div>
-        <div class="pro">
+        <div class="pro menu1 menu4 menu7 menu13">
           <img src="img/bagspic/fe-pkeychain1.jpg" alt="" />
           <div class="desc">
             <span>Pillow Keychain</span>
@@ -235,7 +322,7 @@
           </div>
           <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
         </div>
-        <div class="pro">
+        <div class="pro menu3 menu4 menu7 menu13">
           <img src="img/bagspic/fe-totebag1.jpg" alt="" />
           <div class="desc">
             <span>Canvas Totebag</span>
@@ -251,7 +338,7 @@
           </div>
           <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
         </div>
-        <div class="pro">
+        <div class="pro menu3 menu4 menu7 menu13">
           <img src="img/bagspic/fe-opTotebag1.jpg" alt="" />
           <div class="desc">
             <span>One Piece Canvas Totebag</span>
@@ -267,7 +354,7 @@
           </div>
           <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
         </div>
-        <div class="pro">
+        <div class="pro menu3 menu4 menu7 menu13">
           <img src="img/bagspic/fe-dpouch1.jpg" alt="" />
           <div class="desc">
             <span>Drawstring Pouch</span>
@@ -284,7 +371,7 @@
           <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
         </div>
 
-        <div class="pro">
+        <div class="pro menu1">
           <img src="img/shirtspic/fe-coupshirt1.jpg" alt="" />
           <div class="desc">
             <span>Couple Shirt</span>
@@ -300,7 +387,7 @@
           </div>
           <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
         </div>
-        <div class="pro">
+        <div class="pro menu1">
           <img src="img/shirtspic/fe-famShirt1.jpg" alt="" />
           <div class="desc">
             <span>Family Shirt</span>
@@ -316,7 +403,7 @@
           </div>
           <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
         </div>
-        <div class="pro">
+        <div class="pro menu1">
           <img src="img/shirtspic/fe-zorroShirt.jpg" alt="" />
           <div class="desc">
             <span>One Piece Shirt</span>
@@ -332,7 +419,7 @@
           </div>
           <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
         </div>
-        <div class="pro">
+        <div class="pro menu1">
           <img src="img/shirtspic/fe-chopperShirt.jpg" alt="" />
           <div class="desc">
             <span>One Piece Shirt</span>
@@ -348,7 +435,7 @@
           </div>
           <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
         </div>
-        <div class="pro">
+        <div class="pro menu2 menu4 menu7 menu13">
           <img src="img/bagspic/fe-pkeychain1.jpg" alt="" />
           <div class="desc">
             <span>Pillow Keychain</span>
@@ -364,7 +451,7 @@
           </div>
           <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
         </div>
-        <div class="pro">
+        <div class="pro menu3 menu4 menu7 menu13">
           <img src="img/bagspic/fe-totebag1.jpg" alt="" />
           <div class="desc">
             <span>Canvas Totebag</span>
@@ -380,7 +467,7 @@
           </div>
           <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
         </div>
-        <div class="pro">
+        <div class="pro menu3 menu4 menu7 menu13">
           <img src="img/bagspic/fe-opTotebag1.jpg" alt="" />
           <div class="desc">
             <span>One Piece Canvas Totebag</span>
@@ -396,7 +483,7 @@
           </div>
           <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
         </div>
-        <div class="pro">
+        <div class="pro menu3 menu4 menu7 menu13">
           <img src="img/bagspic/fe-dpouch1.jpg" alt="" />
           <div class="desc">
             <span>Drawstring Pouch</span>
@@ -512,8 +599,88 @@
         <button class="btn">Next step &rarr;</button>
       </form>
     </div>
+
+    <div class="event__catg hidden">
+      <div>
+        <h3>Anniversary</h3>
+        <a href="">Accessories</a>
+        <a href="">Totebags</a>
+        <a href="">Zip pouch</a>
+        <a href="">Keychains</a>
+        <a href="">Mugs</a>
+        <a href="">Invitation Cards</a>
+      </div>
+      <div>
+        <h3>Birthday</h3>
+        <a href="">Keychains & Magnets</a>
+        <a href="">Totebags</a>
+        <a href="">Lootbags</a>
+        <a href="">Pillows</a>
+        <a href="">Notebooks</a>
+        <a href="">Mugs & Thumblers</a>
+        <a href="">Invitation Cards</a>
+      </div>
+      <div>
+        <h3>Baptismal/Christening</h3>
+        <a href="">Candle Favors</a>
+        <a href="">Keychains</a>
+        <a href="">Mini Bibles</a>
+        <a href="">Figurines</a>
+        <a href="">Accessories</a>
+        <a href="#">Mugs</a>
+      </div>
+      <div>
+        <h3>Debut</h3>
+        <a href="">Totebags</a>
+        <a href="">Keychains</a>
+        <a href="">Pens</a>
+        <a href="">Thumblers</a>
+        <a href="">Accessories</a>
+        <a href="#">Mugs</a>
+      </div>
+      <div>
+        <h3>Wedding</h3>
+        <a href="">Keychains</a>
+        <a href="">Wine Bottles</a>
+        <a href="">Coasters</a>
+        <a href="">Hand Fans</a>
+        <a href="">Totebag</a>
+        <a href="">Zip Pouch</a>
+        <a href="">Mugs</a>
+        <a href="">Succulents</a>
+      </div>
+    </div>
+
     <div class="overlay hidden"></div>
 
     <script src="products.js"></script>
+    <script>
+      // Get references to the sidebar menus and product container
+      const menus = document.querySelectorAll('#sidebar ul');
+      const productContainer = document.getElementById('productContainer');
+
+      // Add click event listeners to each sidebar menu
+      menus.forEach(menu => {
+        const button = menu.previousElementSibling;
+        button.addEventListener('click', () => {
+          // Hide all menus
+          menus.forEach(menu => menu.classList.add('collapsed'));
+
+          // Show the selected menu
+          menu.classList.remove('collapsed');
+
+          // Filter and display the corresponding products
+          const selectedMenu = button.getAttribute('data-target');
+          const products = document.querySelectorAll('.pro');
+          products.forEach(product => {
+            if (product.classList.contains(selectedMenu)) {
+              product.style.display = 'block';
+            } else {
+              product.style.display = 'none';
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>
