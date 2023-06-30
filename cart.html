@@ -48,7 +48,7 @@
             >
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="cart.html"
+            <a class="nav__link" href="cart.html" id="cart-button"
               ><i
                 id="lg-bag"
                 class="fa-solid fa-bag-shopping fa-lg"
@@ -85,7 +85,7 @@
             <td>Subtotal</td>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="cart-items">
           <tr>
             <td>
               <a href="#"><i class="far fa-times-circle"></i></a>
@@ -134,7 +134,7 @@
         <table>
           <tr>
             <td>Cart Subtotal</td>
-            <td>$ 150</td>
+            <td id="cart-subtotal">$0.00</td>
           </tr>
           <tr>
             <td>Shipping</td>
@@ -142,7 +142,7 @@
           </tr>
           <tr>
             <td><strong>Total</strong></td>
-            <td><strong>$ 150</strong></td>
+            <td id="cart-total"><strong>$0.00</strong></td>
           </tr>
         </table>
 
@@ -231,6 +231,7 @@
     </div>
     <div class="overlay hidden"></div>
 
-    <script src="product.js"></script>
+    <script src="products.js"></script>
+    
   </body>
 </html>

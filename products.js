@@ -36,40 +36,13 @@ navClose.addEventListener('click', toggleBar)
 
 ////// TEST
 
-// Aside toggle menu
-function toggleMenu() {
-  const buttons = document.querySelectorAll('.toggleButton');
+// CART
 
-  buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const targetId = button.dataset.target;
-      const targetMenu = document.getElementById(targetId);
 
-      // Check if the target menu is already collapsed
-      const isCollapsed = targetMenu.classList.contains('collapsed');
 
-      // Hide all menus
-      menus.forEach(menu => menu.classList.add('collapsed'));
 
-      // Check if the target menu was already collapsed
-      if (!isCollapsed) {
-        // Toggle the 'collapsed' class on the target menu
-        targetMenu.classList.toggle('collapsed');
-      }
-
-      // Update the plus/minus sign
-      const spanElement = button.querySelector('span');
-      if (targetMenu.classList.contains('collapsed')) {
-        spanElement.textContent = '+';
-      } else {
-        spanElement.textContent = '-';
-      }
-    });
-  });
-}
-
-toggleMenu();
-
+///////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
 // Get references to the sidebar menus and product container
 const menuButtons = document.querySelectorAll('#sidebar .toggleButton');
 const menus = document.querySelectorAll('#sidebar ul');
@@ -118,11 +91,23 @@ menuButtons.forEach(button => {
   });
 });
 
-// Add click event listeners to each product
-const products = document.querySelectorAll('.pro');
-products.forEach(product => {
-  product.addEventListener('click', () => {
-    window.location.href = 'product.html';
+// Add click event listeners to each list item
+const listItems = document.querySelectorAll('#sidebar ul li[data-target]');
+listItems.forEach(listItem => {
+  listItem.addEventListener('click', () => {
+    const targetProductId = listItem.dataset.target;
+    const targetProducts = document.querySelectorAll(`[data-product="${targetProductId}"]`);
+    const products = document.querySelectorAll('.pro');
+    
+    // Hide all products
+    products.forEach(product => {
+      product.style.display = 'none';
+    });
+
+    // Show only the target products
+    targetProducts.forEach(product => {
+      product.style.display = 'block';
+    });
   });
 });
 
